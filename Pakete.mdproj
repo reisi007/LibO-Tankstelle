@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ItemType>PackagingProject</ItemType>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FB23FE5-AB36-4BB0-9D7F-AD348A758032}</ProjectGuid>
+    <Packages>
+      <Packages>
+        <Package name="Linux Binärdateien">
+          <Builder targetFile="..\..\..\..\Desktop\monotanke\Tankstelle.zip" platform="Linux" configuration="Release" ctype="BinariesZipPackageBuilder">
+            <ChildEntries>
+              <SolutionItemReference path="Tankstelle\Tankstelle.csproj" />
+            </ChildEntries>
+            <ExcludedFiles>
+              <File>Tankstelle,ProgramFiles,settings\files.txt</File>
+              <File>Tankstelle,ProgramFiles,settings\l10n.txt</File>
+            </ExcludedFiles>
+            <RootEntry path="Tankstelle.sln" id=":root:" />
+          </Builder>
+        </Package>
+      </Packages>
+    </Packages>
+  </PropertyGroup>
+</Project>

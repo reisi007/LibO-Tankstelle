@@ -1,0 +1,11 @@
+Description#Language LEFT#Language RIGHT
+0Program#Programm#Program
+1Langcode#DE#EN
+2Title#LibreOffice USB Tankstelle#LibreOffice USB gas station
+3Select#Auswählen#Select
+4OS#Betriebssystem#Operating System
+5Main#Hauptprogramm#Main program
+6Help#Offline Hilfedateien#Offline help
+7Start#Tanken beginnen#Start filling
+8Reset#Zurücksetzen#Reset
+9Choose#Auswählen#Choose
