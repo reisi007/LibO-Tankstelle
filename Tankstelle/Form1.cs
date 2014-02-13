@@ -157,6 +157,14 @@ namespace Tankstelle
         }
         const int nol_files = 25;
         Button[] os, which, startstop;
+        private void doResize()
+        {
+            splitForm_Resize(splitForm, new EventArgs());
+            splitContainerResize(splitContainer1, new EventArgs());
+            resizePanel(flowLayoutPanel1, new EventArgs());
+            resizePanel(flowLayoutPanel2, new EventArgs());
+            adaptflagsSize(floatingPictures, new EventArgs());
+        }
         public Form1()
         {
             InitializeComponent();
@@ -167,10 +175,7 @@ namespace Tankstelle
             /*
              * Initial flowlayot resize
              */
-            splitContainerResize(splitContainer1, new EventArgs());
-            resizePanel(flowLayoutPanel1, new EventArgs());
-            resizePanel(flowLayoutPanel2, new EventArgs());
-            adaptflagsSize(floatingPictures, new EventArgs());
+            doResize();
             os = new Button[] { b_windows, b_macos_x86, b_macos_x86_64, b_linux_deb_x86, b_linux_deb_x86_64, b_linux_rpm_x86, b_linux_rpm_x86_64 };
             which = new Button[] { b_help, b_main };
             startstop = new Button[] { b_start, b_reset };
@@ -537,12 +542,12 @@ namespace Tankstelle
             gb_choose.Text = l10n[index, 9];
             if (left)
             {
-                picboxLogo.Image = pictureLogoDE;
+                picBigLogo.Image = pictureLogoDE;
                 pictureCopyFinished.Image = pictureSucceedDE;
             }
             else
             {
-                picboxLogo.Image = pictureLogoEN;
+                picBigLogo.Image = pictureLogoEN;
                 pictureCopyFinished.Image = pictureSucceedEN;
             }
             updateCopySize();
@@ -632,7 +637,7 @@ namespace Tankstelle
         }
         private Font getFont(float size)
         {
-            return new Font("Microsoft Sans Serif", size,FontStyle.Regular);
+            return new Font("Microsoft Sans Serif", size, FontStyle.Regular);
         }
         private void adaptflagsSize(object sender, EventArgs e)
         {
@@ -678,9 +683,29 @@ namespace Tankstelle
 
         private void keypressedExit(object sender, PreviewKeyDownEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
-                Environment.Exit(0);
+            switch (e.KeyCode)
+            {
+                case (Keys.Escape):
+                    Environment.Exit(0);
+                    break;
+                case (Keys.F1):
+                    StringBuilder sb = new StringBuilder("© Reisisoft 2013-" + DateTime.Now.Year);
+                    sb.AppendLine("\nPicture sizes:");
+                    sb.Append("-\tFlags: ");
+                    sb.AppendLine(pictureBoxToString(picFlagDE));
+                    sb.Append("-\tBig logo between flags: ");
+                    sb.AppendLine(pictureBoxToString(picBigLogo));
+                    sb.Append("-\tFinished copying: ");
+                    sb.AppendLine(pictureBoxToString(pictureCopyFinished));
+                    MessageBox.Show(sb.ToString());
+                    break;
+            }
         }
+        private string pictureBoxToString(PictureBox pb)
+        {
+            return "(" + pb.Width + "x" + pb.Height + ")";
+        }
+
         private void splitContainerResize(object sender, EventArgs e)
         {
             SplitContainer sc = (SplitContainer)sender;
@@ -697,6 +722,14 @@ namespace Tankstelle
         private void Form1_Load(object sender, EventArgs e)
         {
             setl10n();
+        }
+
+        private void splitForm_Resize(object sender, EventArgs e)
+        {
+            SplitContainer sc = (SplitContainer)sender;
+            int size35 = (int)(0.5f + sc.Size.Height * 0.35) - 2;
+            sc.Panel1MinSize = size35;
+            sc.Panel2MinSize = (sc.Size.Height - size35);
         }
     }
 }
