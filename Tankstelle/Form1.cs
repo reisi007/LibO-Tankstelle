@@ -160,6 +160,7 @@ namespace Tankstelle
         private void doResize()
         {
             splitForm_Resize(splitForm, new EventArgs());
+            split2(splitContainer2, new EventArgs());
             splitContainerResize(splitContainer1, new EventArgs());
             resizePanel(flowLayoutPanel1, new EventArgs());
             resizePanel(flowLayoutPanel2, new EventArgs());
@@ -518,7 +519,7 @@ namespace Tankstelle
         }
         private void setTitle(int index, string n)
         {
-            label1.Text = l10n[index, 2] + ((n != null && n.Length > 0) ? " " + n : "");
+            output.Text = l10n[index, 2] + ((n != null && n.Length > 0) ? " " + n : "");
         }
         private void setTitle(bool left, string n)
         {
@@ -665,7 +666,7 @@ namespace Tankstelle
             updateCopySize();
             getMinFreeSpace();
             // Do copy, if sender is red
-            if (((Button)sender).BackColor == red || label1.Text.Contains("No stick") || USBSticks == null)
+            if (((Button)sender).BackColor == red || output.Text.Contains("No stick") || USBSticks == null)
                 return;
             pb_byte.Visible = false;
             pb_number.Visible = true;
@@ -685,9 +686,11 @@ namespace Tankstelle
         {
             switch (e.KeyCode)
             {
+                    // Close
                 case (Keys.Escape):
                     Environment.Exit(0);
                     break;
+                    // See picture sizes
                 case (Keys.F1):
                     StringBuilder sb = new StringBuilder("© Reisisoft 2013-" + DateTime.Now.Year);
                     sb.AppendLine("\nPicture sizes:");
@@ -698,6 +701,10 @@ namespace Tankstelle
                     sb.Append("-\tFinished copying: ");
                     sb.AppendLine(pictureBoxToString(pictureCopyFinished));
                     MessageBox.Show(sb.ToString());
+                    break;
+                    // Show / Hide admin info
+                case (Keys.A):
+                    output.Visible = !output.Visible;
                     break;
             }
         }
@@ -730,6 +737,14 @@ namespace Tankstelle
             int size35 = (int)(0.5f + sc.Size.Height * 0.35) - 2;
             sc.Panel1MinSize = size35;
             sc.Panel2MinSize = (sc.Size.Height - size35);
+        }
+
+        private void split2(object sender, EventArgs e)
+        {
+            SplitContainer sc = (SplitContainer)sender;
+            int size74 = (int)(0.5f + sc.Size.Height * 0.74) - 2;
+            sc.Panel1MinSize = size74;
+            sc.Panel2MinSize = (sc.Size.Height - size74);
         }
     }
 }

@@ -34,7 +34,13 @@ The first run might be difficult. Please do not get frustrated!
 3.  Congrats, if you did everything right the program should start now.
     Please make sure you do not use the default logos ;)
 
-## How to get the logo size for my resolution?
+## Admins - Keys you can use
 
-It is quite easy. When the program is running idle [so doing nothing],
-press $F1$. To close the program, use $ESC$.
+-   $F1$ : See the preferred picture size for your screen resolution
+
+-   $ESC$ : Close the program
+
+-   $A$ : Get the "admin info" (in the top left corner) [Hide/Unhide]
+    {This means \# of sticks inserted and minimum free space.
+
+

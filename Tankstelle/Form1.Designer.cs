@@ -51,9 +51,10 @@
             this.picFlagDE = new System.Windows.Forms.PictureBox();
             this.picFlagEN = new System.Windows.Forms.PictureBox();
             this.floatingPictures = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.output = new System.Windows.Forms.Label();
             this.pictureCopyFinished = new System.Windows.Forms.PictureBox();
             this.splitForm = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gb_choose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -70,31 +71,36 @@
             this.splitForm.Panel1.SuspendLayout();
             this.splitForm.Panel2.SuspendLayout();
             this.splitForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pb_byte
             // 
-            this.pb_byte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pb_byte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_byte.BackColor = System.Drawing.Color.Red;
             this.pb_byte.ForeColor = System.Drawing.Color.Black;
-            this.pb_byte.Location = new System.Drawing.Point(3, 324);
+            this.pb_byte.Location = new System.Drawing.Point(-1, 3);
             this.pb_byte.Maximum = 10000;
             this.pb_byte.Name = "pb_byte";
-            this.pb_byte.Size = new System.Drawing.Size(1310, 24);
+            this.pb_byte.Size = new System.Drawing.Size(1314, 24);
             this.pb_byte.Step = 500;
             this.pb_byte.TabIndex = 4;
             this.pb_byte.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             // 
             // b_reset
             // 
-            this.b_reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.b_reset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.b_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.b_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.b_reset.Location = new System.Drawing.Point(892, 354);
+            this.b_reset.Location = new System.Drawing.Point(821, 33);
             this.b_reset.Name = "b_reset";
-            this.b_reset.Size = new System.Drawing.Size(421, 145);
+            this.b_reset.Size = new System.Drawing.Size(492, 207);
             this.b_reset.TabIndex = 9;
             this.b_reset.Text = "Reset";
             this.b_reset.UseVisualStyleBackColor = false;
@@ -103,14 +109,15 @@
             // 
             // b_start
             // 
-            this.b_start.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.b_start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.b_start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.b_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.b_start.Location = new System.Drawing.Point(3, 354);
+            this.b_start.Location = new System.Drawing.Point(0, 33);
             this.b_start.Name = "b_start";
-            this.b_start.Size = new System.Drawing.Size(883, 145);
+            this.b_start.Size = new System.Drawing.Size(815, 207);
             this.b_start.TabIndex = 1;
             this.b_start.Text = "Start";
             this.b_start.UseVisualStyleBackColor = false;
@@ -119,18 +126,16 @@
             // 
             // gb_choose
             // 
-            this.gb_choose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_choose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gb_choose.Controls.Add(this.lProg);
             this.gb_choose.Controls.Add(this.lOS);
             this.gb_choose.Controls.Add(this.splitContainer1);
+            this.gb_choose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gb_choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_choose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gb_choose.Location = new System.Drawing.Point(3, 5);
+            this.gb_choose.Location = new System.Drawing.Point(0, 0);
             this.gb_choose.Name = "gb_choose";
-            this.gb_choose.Size = new System.Drawing.Size(1310, 313);
+            this.gb_choose.Size = new System.Drawing.Size(1313, 258);
             this.gb_choose.TabIndex = 8;
             this.gb_choose.TabStop = false;
             this.gb_choose.Text = "Choose";
@@ -140,7 +145,7 @@
             // 
             this.lProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lProg.AutoSize = true;
-            this.lProg.Location = new System.Drawing.Point(11, 274);
+            this.lProg.Location = new System.Drawing.Point(11, 219);
             this.lProg.Name = "lProg";
             this.lProg.Size = new System.Drawing.Size(87, 24);
             this.lProg.TabIndex = 3;
@@ -173,8 +178,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1126, 294);
-            this.splitContainer1.SplitterDistance = 145;
+            this.splitContainer1.Size = new System.Drawing.Size(1129, 239);
+            this.splitContainer1.SplitterDistance = 117;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.Resize += new System.EventHandler(this.splitContainerResize);
@@ -191,7 +196,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1126, 145);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1129, 117);
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             this.flowLayoutPanel1.Resize += new System.EventHandler(this.resizePanel);
@@ -309,7 +314,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1126, 148);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1129, 121);
             this.flowLayoutPanel2.TabIndex = 5;
             this.flowLayoutPanel2.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             this.flowLayoutPanel2.Resize += new System.EventHandler(this.resizePanel);
@@ -347,13 +352,13 @@
             // 
             // pb_number
             // 
-            this.pb_number.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pb_number.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_number.BackColor = System.Drawing.Color.Red;
             this.pb_number.ForeColor = System.Drawing.Color.Black;
-            this.pb_number.Location = new System.Drawing.Point(3, 324);
+            this.pb_number.Location = new System.Drawing.Point(0, 3);
             this.pb_number.Name = "pb_number";
-            this.pb_number.Size = new System.Drawing.Size(1310, 24);
+            this.pb_number.Size = new System.Drawing.Size(1313, 24);
             this.pb_number.Step = 1;
             this.pb_number.TabIndex = 10;
             this.pb_number.Visible = false;
@@ -407,14 +412,15 @@
             this.floatingPictures.SizeChanged += new System.EventHandler(this.adaptflagsSize);
             this.floatingPictures.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             // 
-            // label1
+            // output
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
+            this.output.AutoSize = true;
+            this.output.Location = new System.Drawing.Point(0, 0);
+            this.output.Name = "output";
+            this.output.Size = new System.Drawing.Size(35, 13);
+            this.output.TabIndex = 15;
+            this.output.Text = "label1";
+            this.output.Visible = false;
             // 
             // pictureCopyFinished
             // 
@@ -446,11 +452,7 @@
             // 
             // splitForm.Panel2
             // 
-            this.splitForm.Panel2.Controls.Add(this.gb_choose);
-            this.splitForm.Panel2.Controls.Add(this.b_reset);
-            this.splitForm.Panel2.Controls.Add(this.pb_number);
-            this.splitForm.Panel2.Controls.Add(this.b_start);
-            this.splitForm.Panel2.Controls.Add(this.pb_byte);
+            this.splitForm.Panel2.Controls.Add(this.splitContainer2);
             this.splitForm.Size = new System.Drawing.Size(1313, 778);
             this.splitForm.SplitterDistance = 275;
             this.splitForm.SplitterWidth = 1;
@@ -458,13 +460,37 @@
             this.splitForm.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             this.splitForm.Resize += new System.EventHandler(this.splitForm_Resize);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.gb_choose);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.pb_number);
+            this.splitContainer2.Panel2.Controls.Add(this.b_reset);
+            this.splitContainer2.Panel2.Controls.Add(this.pb_byte);
+            this.splitContainer2.Panel2.Controls.Add(this.b_start);
+            this.splitContainer2.Size = new System.Drawing.Size(1313, 502);
+            this.splitContainer2.SplitterDistance = 258;
+            this.splitContainer2.SplitterWidth = 1;
+            this.splitContainer2.TabIndex = 4;
+            this.splitContainer2.Resize += new System.EventHandler(this.split2);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(163)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(1321, 786);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.output);
             this.Controls.Add(this.splitForm);
             this.Controls.Add(this.pictureCopyFinished);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -495,6 +521,10 @@
             this.splitForm.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitForm)).EndInit();
             this.splitForm.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,10 +554,11 @@
         private System.Windows.Forms.PictureBox picFlagDE;
         private System.Windows.Forms.PictureBox picFlagEN;
         private System.Windows.Forms.FlowLayoutPanel floatingPictures;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label output;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureCopyFinished;
         private System.Windows.Forms.SplitContainer splitForm;
+        private System.Windows.Forms.SplitContainer splitContainer2;
     }
 }
 
