@@ -100,7 +100,7 @@
             this.b_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.b_reset.Location = new System.Drawing.Point(821, 33);
             this.b_reset.Name = "b_reset";
-            this.b_reset.Size = new System.Drawing.Size(492, 207);
+            this.b_reset.Size = new System.Drawing.Size(492, 210);
             this.b_reset.TabIndex = 9;
             this.b_reset.Text = "Reset";
             this.b_reset.UseVisualStyleBackColor = false;
@@ -117,7 +117,7 @@
             this.b_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.b_start.Location = new System.Drawing.Point(0, 33);
             this.b_start.Name = "b_start";
-            this.b_start.Size = new System.Drawing.Size(815, 207);
+            this.b_start.Size = new System.Drawing.Size(815, 210);
             this.b_start.TabIndex = 1;
             this.b_start.Text = "Start";
             this.b_start.UseVisualStyleBackColor = false;
@@ -182,6 +182,7 @@
             this.splitContainer1.SplitterDistance = 117;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
+            this.splitContainer1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             this.splitContainer1.Resize += new System.EventHandler(this.splitContainerResize);
             // 
             // flowLayoutPanel1
@@ -421,6 +422,7 @@
             this.output.TabIndex = 15;
             this.output.Text = "label1";
             this.output.Visible = false;
+            this.output.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             // 
             // pictureCopyFinished
             // 
@@ -482,6 +484,7 @@
             this.splitContainer2.SplitterDistance = 258;
             this.splitContainer2.SplitterWidth = 1;
             this.splitContainer2.TabIndex = 4;
+            this.splitContainer2.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.keypressedExit);
             this.splitContainer2.Resize += new System.EventHandler(this.split2);
             // 
             // Form1
